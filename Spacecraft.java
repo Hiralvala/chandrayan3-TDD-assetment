@@ -8,6 +8,33 @@ public class Spacecraft {
         z=initialZ;
         direction=initialdirection;
     }
+    public void executeCommands(char[] commands){
+        for(int i=0;i<commands.length;i++){
+            executeCommand(commands[i]);
+        }
+    }
+    private void executeCommand(char command){
+        switch(command){
+            case 'f':
+                moveForward();
+                break;
+            case 'b':
+                moveBackward();
+                break;
+            case 'r':
+                turnRight();
+                break;
+            case 'l':
+                turnLeft();
+                break;
+            case 'u':
+                turnUp();
+                break;
+            case 'd':
+                turndown();
+                break;
+        }
+    }
     public static void main(String[] args) {
         int initialX=0,initialY=0,initialZ=0;
         char initialdirection='N';
