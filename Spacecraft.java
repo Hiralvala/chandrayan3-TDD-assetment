@@ -101,6 +101,7 @@ public class Spacecraft {
             z--;
         }
     }
+    
     public static void main(String[] args) {
         int initialX=0,initialY=0,initialZ=0;
         char initialdirection='N';
@@ -110,6 +111,11 @@ public class Spacecraft {
 
         //command execution in main 
         chandrayan3.executeCommands(commands);
+
+
+        // print final position and direction
+        System.out.println("Final Position : ("+chandrayan3.x+","+chandrayan3.y+","+chandrayan3.z+")");
+        System.out.println("Final Direction : "+chandrayan3.direction);
     }
     
 }
