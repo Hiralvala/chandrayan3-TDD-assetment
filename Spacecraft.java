@@ -62,6 +62,32 @@ public class Spacecraft {
             x++;
         }
     }
+
+
+    // Implement Turning
+    public void turnRight(){
+        if(direction == 'N'){
+            direction = 'E';
+        }else if(direction == 'E'){
+            direction = 'S';
+        }else if(direction == 'S'){
+            direction = 'W';
+        }else if(direction == 'W'){
+            direction = 'N';
+        }
+    }
+
+    public void turnLeft(){
+        if(direction == 'N'){
+            direction = 'W';
+        }else if(direction == 'w'){
+            direction = 'S';
+        }else if(direction == 'S'){
+            direction = 'E';
+        }else if(direction == 'E'){
+            direction = 'N';
+        }
+    }
     public static void main(String[] args) {
         int initialX=0,initialY=0,initialZ=0;
         char initialdirection='N';
