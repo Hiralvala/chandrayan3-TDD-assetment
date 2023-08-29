@@ -88,6 +88,19 @@ public class Spacecraft {
             direction = 'N';
         }
     }
+
+
+    // Implement upWard and downward 
+    public void turnUp(){
+        if(z<Integer.MAX_VALUE){
+            z++;
+        }
+    }
+    public void turndown(){
+        if(z>Integer.MIN_VALUE){
+            z--;
+        }
+    }
     public static void main(String[] args) {
         int initialX=0,initialY=0,initialZ=0;
         char initialdirection='N';
