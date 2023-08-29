@@ -108,6 +108,8 @@ public class Spacecraft {
 
         Spacecraft chandrayan3=new Spacecraft(initialX,initialY,initialZ,initialdirection);
 
+        //command execution in main 
+        chandrayan3.executeCommands(commands);
     }
     
 }
