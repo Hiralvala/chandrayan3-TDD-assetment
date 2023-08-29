@@ -35,6 +35,20 @@ public class Spacecraft {
                 break;
         }
     }
+
+    // Implement Forward Movement
+    public void moveForward(){
+        if(direction == 'N'){
+            y++;
+        }else if(direction == 'S'){
+            y--;
+        }else if(direction == 'E'){
+            x++;
+        }else if(direction == 'W'){
+            x--;
+        }
+
+    }
     public static void main(String[] args) {
         int initialX=0,initialY=0,initialZ=0;
         char initialdirection='N';
