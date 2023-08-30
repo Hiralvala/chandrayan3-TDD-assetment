@@ -12,24 +12,24 @@ Follow the steps below to set up and run the Chandrayaan 3 Lunar Craft program:
 
 1. *Clone the repository:*
 
-
-git clone https://github.com/Hiralvala/chandrayan3-TDD-assetment.git
+bash
+  git clone https://github.com/Hiralvala/chandrayan3-TDD-assetment.git
 
 
 2. *Navigate to the project directory:*
 
-
-cd chandrayan3-TDD-assetment
+bash
+  cd chandrayan3-TDD-assetment
 
 
 3. *Compile and Run the Java source code:*
 
+ bash
+  javac Spacecraft.java
 
-javac Spacecraft.java
 
-
-
-java Spacecraft
+bash
+  java Spacecraft
 
 
 5. Modify initial parameters here for changing the directions
