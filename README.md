@@ -11,18 +11,20 @@ This project implements a Java program that simulates the movement and navigatio
 Follow the steps below to set up and run the Chandrayaan 3 Lunar Craft program:
 
 1. *Clone the repository:*
-
+bash
 git clone https://github.com/Hiralvala/chandrayan3-TDD-assetment.git
 
 
 2. *Navigate to the project directory:*
-
+bash
 cd chandrayan3-TDD-assetment
 
 
 3. *Compile and Run the Java source code:*
 
+bash
 javac Spacecraft.java
+
 java Spacecraft
 
 
@@ -65,5 +67,7 @@ Initial Direction: N
 - "u" - (0, 1, 0) - U
 - "b" - (0, 1, -1) - U
 - "l" - (0, 1, -1) - N
+
 Final Position: (0, 1, -1)
+
 Final Direction: N
