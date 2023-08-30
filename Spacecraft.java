@@ -1,20 +1,22 @@
-public class Spacecraft {
-    int x,y,z;
-    char direction;
+public class Spacecraft {  
+    private int x, y, z;
+    private Direction direction;
 
-    Spacecraft(int initialX,int initialY,int initialZ,char initialdirection){
-        x=initialX;
-        y=initialY;
-        z=initialZ;
-        direction=initialdirection;
+    public Spacecraft(int initialX, int initialY, int initialZ, Direction initialDirection) {
+        x = initialX;
+        y = initialY;
+        z = initialZ;
+        direction = initialDirection;
     }
-    public void executeCommands(char[] commands){
-        for(int i=0;i<commands.length;i++){
-            executeCommand(commands[i]);
+
+    public void executeCommands(char[] commands) {
+        for (char command : commands) {
+            executeCommand(command);
         }
     }
-    private void executeCommand(char command){
-        switch(command){
+
+    private void executeCommand(char command) {
+        switch (command) {
             case 'f':
                 moveForward();
                 break;
@@ -31,91 +33,109 @@ public class Spacecraft {
                 turnUp();
                 break;
             case 'd':
-                turndown();
+                turnDown();
                 break;
         }
     }
 
-    // Implement Forward Movement
-    public void moveForward(){
-        if(direction == 'N'){
+     // Implement Forward Movement
+    private void moveForward() {
+        if (direction == Direction.NORTH) {
             y++;
-        }else if(direction == 'S'){
+        } else if (direction == Direction.SOUTH) {
             y--;
-        }else if(direction == 'E'){
+        } else if (direction == Direction.EAST) {
             x++;
-        }else if(direction == 'W'){
+        } else if (direction == Direction.WEST) {
             x--;
-        }
-
-    }
-    
-    // Implement Backward movement
-    public void moveBackward(){
-        if(direction == 'N'){
-            y--;
-        }else if(direction == 'S'){
-            y++;
-        }else if(direction == 'E'){
-            x--;
-        }else if(direction == 'W'){
-            x++;
-        }
-    }
-
-
-    // Implement Turning
-    public void turnRight(){
-        if(direction == 'N'){
-            direction = 'E';
-        }else if(direction == 'E'){
-            direction = 'S';
-        }else if(direction == 'S'){
-            direction = 'W';
-        }else if(direction == 'W'){
-            direction = 'N';
-        }
-    }
-
-    public void turnLeft(){
-        if(direction == 'N'){
-            direction = 'W';
-        }else if(direction == 'w'){
-            direction = 'S';
-        }else if(direction == 'S'){
-            direction = 'E';
-        }else if(direction == 'E'){
-            direction = 'N';
-        }
-    }
-
-
-    // Implement upWard and downward 
-    public void turnUp(){
-        if(z<Integer.MAX_VALUE){
+        } else if (direction == Direction.UP) {
             z++;
-        }
-    }
-    public void turndown(){
-        if(z>Integer.MIN_VALUE){
+        } else if (direction == Direction.DOWN) {
             z--;
         }
     }
-    
-    public static void main(String[] args) {
-        int initialX=0,initialY=0,initialZ=0;
-        char initialdirection='N';
-        char[]commands={'f','r','u','b','l'};
 
-        Spacecraft chandrayan3=new Spacecraft(initialX,initialY,initialZ,initialdirection);
+    // Implement Backward movement
+    private void moveBackward() {
+        if (direction == Direction.NORTH) {
+            y--;
+        } else if (direction == Direction.SOUTH) {
+            y++;
+        } else if (direction == Direction.EAST) {
+            x--;
+        } else if (direction == Direction.WEST) {
+            x++;
+        } else if (direction == Direction.UP) {
+            z--;
+        } else if (direction == Direction.DOWN) {
+            z++;
+        }
+    }
 
-        //command execution in main 
-        chandrayan3.executeCommands(commands);
-
-
-        // print final position and direction
-        System.out.println("Final Position : ("+chandrayan3.x+","+chandrayan3.y+","+chandrayan3.z+")");
-        System.out.println("Final Direction : "+chandrayan3.direction);
+     // Implement Turning
+    private void turnRight() {
+        if (direction == Direction.NORTH) {
+            direction = Direction.EAST;
+        } else if (direction == Direction.EAST) {
+            direction = Direction.SOUTH;
+        } else if (direction == Direction.SOUTH) {
+            direction = Direction.WEST;
+        } else if (direction == Direction.WEST) {
+            direction = Direction.NORTH;
+        } else if (direction == Direction.UP) {
+            direction = Direction.EAST;
+        } else if (direction == Direction.DOWN) {
+            direction = Direction.WEST;
+        }
     }
     
+    private void turnLeft() {
+        if (direction == Direction.NORTH) {
+            direction = Direction.WEST;
+        } else if (direction == Direction.WEST) {
+            direction = Direction.NORTH;
+        } else if (direction == Direction.SOUTH) {
+            direction = Direction.EAST;
+        } else if (direction == Direction.EAST) {
+            direction = Direction.SOUTH;
+        } else if (direction == Direction.UP) {
+            direction = Direction.NORTH;
+        } else if (direction == Direction.DOWN) {
+            direction = Direction.SOUTH;
+        }
+    }
+    
+    // Implement upWard and downward 
+    private void turnUp() {
+        if (direction == Direction.NORTH || direction == Direction.SOUTH ||
+            direction == Direction.EAST || direction == Direction.WEST) {
+            direction = Direction.UP;
+        }
+    }
+
+    private void turnDown() {
+        if (direction == Direction.NORTH || direction == Direction.SOUTH ||
+            direction == Direction.EAST || direction == Direction.WEST) {
+            direction = Direction.DOWN;
+        }
+    }
+
+    public static void main(String[] args) {
+        int initialX = 0, initialY = 0, initialZ = 0;
+        Direction initialDirection = Direction.NORTH;
+        char[] commands = {'f', 'r', 'u', 'b', 'l'};
+
+        Spacecraft chandrayan3 = new Spacecraft(initialX, initialY, initialZ, initialDirection);
+
+        //command execution in main
+        chandrayan3.executeCommands(commands);
+
+        // print final position and direction
+        System.out.println("Final Position: (" + chandrayan3.x + ", " + chandrayan3.y + ", " + chandrayan3.z + ")");
+        System.out.println("Final Direction: " + chandrayan3.direction.toString().charAt(0));
+    }
+}
+
+enum Direction {
+    NORTH, SOUTH, EAST, WEST, UP, DOWN
 }
