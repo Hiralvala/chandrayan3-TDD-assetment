@@ -29,7 +29,7 @@ java Spacecraft
 5. Modify initial parameters here for changing the directions
 - Made changes here
 
-<img src='./images/ss1.jpeg'>
+<img src='./images/ss1.png'>
 
 ## Usage
 
