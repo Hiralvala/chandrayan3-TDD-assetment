@@ -10,57 +10,51 @@ This project implements a Java program that simulates the movement and navigatio
 
 Follow the steps below to set up and run the Chandrayaan 3 Lunar Craft program:
 
-1. *Clone the repository:*
+1. **Clone the repository:**
 
-bash
+```bash
   git clone https://github.com/Hiralvala/chandrayan3-TDD-assetment.git
+```
 
+2. **Navigate to the project directory:**
 
-2. *Navigate to the project directory:*
-
-bash
+```bash
   cd chandrayan3-TDD-assetment
+```
 
+3. **Compile and Run the Java source code:**
 
-3. *Compile and Run the Java source code:*
-
- bash
+``` bash
   javac Spacecraft.java
+```
 
-
-bash
+```bash
   java Spacecraft
-
+```
 
 5. Modify initial parameters here for changing the directions
 - Made changes here
 
-
 <img src='./images/ss1.png'>
-
 
 ## Usage
 
-
 Before running the program, you can provide the initial position, direction, and a sequence of commands to simulate the spacecraft's movement and navigation. The program will display the final position and direction of the spacecraft after executing the commands.
-
 
 ### Commands
 
-- *"f":* Move the spacecraft one step forward.
-- *"b":* Move the spacecraft one step backward.
-- *"r":* Turn the spacecraft 90 degrees to the right.
-- *"l":* Turn the spacecraft 90 degrees to the left.
-- *"u":* Turn the spacecraft upwards.
-- *"d":* Turn the spacecraft downwards.
-
+- **"f":** Move the spacecraft one step forward.
+- **"b":** Move the spacecraft one step backward.
+- **"r":** Turn the spacecraft 90 degrees to the right.
+- **"l":** Turn the spacecraft 90 degrees to the left.
+- **"u":** Turn the spacecraft upwards.
+- **"d":** Turn the spacecraft downwards.
 
 ## Notes
 
 - The spacecraft cannot move or rotate diagonally; it can only move in the direction it is currently facing.
 - The spacecraft’s initial direction represents the reference frame for movement and rotation.
 - The program simulates rigid movement and rotations of the spacecraft.
-
 
 ## Example
 
